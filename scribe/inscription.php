@@ -1,4 +1,4 @@
-<?php
+<?php                                                   //Cette page est appelée dans par le formulaire, elle permet d'envoyer un mailautomatique à chaque nouvel inscrit.
 
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
