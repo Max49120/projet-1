@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Scribe - Externaliser la rédaction de vos contenus marketing</title>
+    <title>Scribe - Externalisez la rédaction de vos contenus marketing</title>
     <link href="https://fonts.googleapis.com/css?family=Hind+Vadodara:400,600,700|Frank+Ruhl+Libre:700" rel="stylesheet">
     <link rel="stylesheet" href="dist/css/style.css">
     <script src="https://unpkg.com/scrollreveal@4.0.0/dist/scrollreveal.min.js"></script>
@@ -56,13 +56,191 @@
 					<div class="testimonials-inner section-inner">
 						<h2 class="section-title mt-0 text-center">Devenez Rédacteur</h2>
                         
-                    
+                    <!--Ce code php est celui qui bug; il fait disparaître tous les codes inscrit en-dessous-->
                             
                        <?php
                         
                             $bdd = new PDO('mysql:host=localhost;dbname=redacteurs_scribe', 'root', '')
                     ?>
                         
+					 <form method="post" action="inscription.php">
+          
+                             
+                          <div class="form-row text firstname">
+                <label class="firstname" for="firstname">Votre prénom</label>
+                <input 
+                  name="firstname"
+                  type="text"
+                  placeholder="John"
+                  required
+                >
+              </div>
+
+              <div class="form-row text lastname">
+                <label class="lastname" for="lastname">Votre nom</label>
+                <input
+                  
+                  name="lastname"
+                  type="text"
+                  placeholder="Doe"
+                  required
+                >
+              </div>
+
+            <div class="form-row text email">
+              <label class="email" for="email">Votre adresse e-mail professionnelle</label>
+              <input
+                id="email"
+                name="email"
+                type="email"
+                placeholder="john.doe@exemple.com"
+                required
+              >
+            </div>
+            
+            <div class="form-row select country">
+              <label class="preference" for="preference">Préférences</label>
+              <div class="select-wrapper">
+                <select
+                  id="preferences"
+                  name="preferences"
+                  required
+                  data-searchable-select-input-placeholder="Rechercher..."
+                  data-searchable-select-no-results-message="Votre recherche ne correspond à aucune préférences..."
+                >
+                  <option disabled value="">Sélectionner votre domaine d'activité</option>
+                    <option
+                      
+                      value="MAR">Marketing</option>
+                    <option
+                      
+                      value="SEO">SEO</option>
+                    <option
+                      
+                      value="BLO">Blog</option>
+                    <option
+                      
+                      value="CMA"> Community Management</option>
+                    <option
+                      
+                      value="LIN">LinkedIn</option>
+                    <option
+                      
+                      value="COM">Communication</option>
+                    
+                </select>
+              </div>
+            </div>
+            <div class="form-row stripe-products">
+              <label for="disponibilites" class="disponibilites">
+                Disponibilités
+
+                <summary class="stripe-products">Quels sont les jours où vous pouvez rédiger ?</summary>
+              </label>
+              <div class="checkbox-wrapper">
+                  <div class="checkbox-container">
+                    <label class="checkbox" for="lundi">
+                      <input type="checkbox" id="lundi" value="disponibilites/lundi" name="disponibilites">
+                      <div class="checkbox-box" aria-hidden="true">
+                        <div class="checkbox-outer">
+                          <div class="checkbox-inner"></div>
+                        </div>
+                      </div>
+
+                      <span class="checkbox-label">Lundi</span>
+                    </label>
+                  </div>
+                                  <div class="checkbox-container">
+                    <label class="checkbox" for="mardi">
+                      <input type="checkbox" id="mardi" value="disponibilites/mardi" name="disponibilites">
+                      <div class="checkbox-box" aria-hidden="true">
+                        <div class="checkbox-outer">
+                          <div class="checkbox-inner"></div>
+                        </div>
+                      </div>
+
+                      <span class="checkbox-label">Mardi</span>
+                    </label>
+                  </div>
+                                  <div class="checkbox-container">
+                    <label class="checkbox" for="mercredi">
+                      <input type="checkbox" id="mercredi" value="disponibilites/mercredi" name="disponibilites">
+                      <div class="checkbox-box" aria-hidden="true">
+                        <div class="checkbox-outer">
+                          <div class="checkbox-inner"></div>
+                        </div>
+                      </div>
+
+                      <span class="checkbox-label">Mercredi</span>
+                    </label>
+                  </div>
+                                  <div class="checkbox-container">
+                    <label class="checkbox" for="jeudi">
+                      <input type="checkbox" id="jeudi" value="disponibilites/jeudi" name="disponibilites">
+                      <div class="checkbox-box" aria-hidden="true">
+                        <div class="checkbox-outer">
+                          <div class="checkbox-inner"></div>
+                        </div>
+                      </div>
+
+                      <span class="checkbox-label">Jeudi</span>
+                    </label>
+                  </div>
+                                  <div class="checkbox-container">
+                    <label class="checkbox" for="vendredi">
+                      <input type="checkbox" id="vendredi" value="disponibilites/vendredi" name="disponibilites">
+                      <div class="checkbox-box" aria-hidden="true">
+                        <div class="checkbox-outer">
+                          <div class="checkbox-inner"></div>
+                        </div>
+                      </div>
+
+                      <span class="checkbox-label">Vendredi</span>
+                    </label>
+                  </div>
+                                  <div class="checkbox-container">
+                    <label class="checkbox" for="samedi">
+                      <input type="checkbox" id="samedi" value="disponibilites/samedi" name="disponibilites">
+                      <div class="checkbox-box" aria-hidden="true">
+                        <div class="checkbox-outer">
+                          <div class="checkbox-inner"></div>
+                        </div>
+                      </div>
+
+                      <span class="checkbox-label">Samedi</span>
+                    </label>
+                  </div>
+                  
+                  <div class="checkbox-container">
+                    <label class="checkbox" for="dimanche">
+                      <input type="checkbox" id="dimanche" value="disponibilites/dimanche" name="disponibilites">
+                      <div class="checkbox-box" aria-hidden="true">
+                        <div class="checkbox-outer">
+                          <div class="checkbox-inner"></div>
+                        </div>
+                      </div>
+
+                      <span class="checkbox-label">Dimanche</span>
+                    </label>
+                  </div>
+                
+              </div>
+            </div>
+            
+           
+            <div class="form-row textarea">
+              <label class="message" for="message">Parlez-nous de vous !</label>
+              <textarea name="message" id="message" required placeholder="Présentez-vous et parlez-nous de vos projets, vos envies ou votre motivation pour devenir rédacteur..."></textarea>
+            </div>
+          
+          <div class="submit-row">
+            <div class="error">
+              <span>Nous avons rencontré un problème et nous en sommes désolés. Vous pouvez toujours nous contacter à l'adresse <a href="mailto:sales@stripe.com" class="common-Link">contact@scribe.io</a>.</span>
+            </div>
+            
+            <button type="submit" class="submit-button common-Button common-Button--default" >Je me lance dans l'aventure</button>
+          </div>
+        </form>
 						<div class="testimonials-wrap1">
 							<div class="testimonial text-center text-xs is-revealing">
 								<div class="testimonial-inner">
